@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.3)  16 OCT 2014 16:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.3)  16 OCT 2014 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,55 +654,115 @@ File: Watershed1.png Graphic file (type png)
  <use Watershed1.png>
 Package pdftex.def Info: Watershed1.png used on input line 91.
 (pdftex.def)             Requested size: 113.80196pt x 113.80815pt.
-File: Image1.png Graphic file (type png)
 
-<use Image1.png>
+[2]
+File: Image1.png Graphic file (type png)
+ <use Image1.png>
 Package pdftex.def Info: Image1.png used on input line 104.
-(pdftex.def)             Requested size: 113.80196pt x 113.80815pt.
- <E0Sigma21.png, id=27, 717.68124pt x 486.81876pt>
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+ <E0Sigma21.png, id=36, 717.68124pt x 486.81876pt>
 File: E0Sigma21.png Graphic file (type png)
 
 <use E0Sigma21.png>
 Package pdftex.def Info: E0Sigma21.png used on input line 105.
-(pdftex.def)             Requested size: 113.80196pt x 113.80815pt.
- <E1Sigma21.png, id=28, 717.68124pt x 486.81876pt>
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+ <E1Sigma21.png, id=37, 717.68124pt x 486.81876pt>
 File: E1Sigma21.png Graphic file (type png)
 
 <use E1Sigma21.png>
 Package pdftex.def Info: E1Sigma21.png used on input line 106.
-(pdftex.def)             Requested size: 113.80196pt x 113.80815pt.
- <E2Sigma21.png, id=29, 717.68124pt x 486.81876pt>
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+ <E2Sigma21.png, id=38, 717.68124pt x 486.81876pt>
 File: E2Sigma21.png Graphic file (type png)
 
 <use E2Sigma21.png>
 Package pdftex.def Info: E2Sigma21.png used on input line 107.
-(pdftex.def)             Requested size: 113.80196pt x 113.80815pt.
- [2] (./15OCTReport.bbl
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+ <1stKMeans1.png, id=39, 717.68124pt x 486.81876pt>
+File: 1stKMeans1.png Graphic file (type png)
+
+<use 1stKMeans1.png>
+Package pdftex.def Info: 1stKMeans1.png used on input line 115.
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+
+Underfull \hbox (badness 1173) in paragraph at lines 115--115
+[]\OT1/cmr/m/n/8 (a) |Com-po-nent Clus-
+ []
+
+<1stKMeansLowInten1.png, id=40, 717.68124pt x 486.81876pt>
+File: 1stKMeansLowInten1.png Graphic file (type png)
+
+<use 1stKMeansLowInten1.png>
+Package pdftex.def Info: 1stKMeansLowInten1.png used on input line 116.
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+
+<1stKMeansLowIntenCCA1.png, id=41, 717.68124pt x 486.81876pt>
+File: 1stKMeansLowIntenCCA1.png Graphic file (type png)
+
+<use 1stKMeansLowIntenCCA1.png>
+Package pdftex.def Info: 1stKMeansLowIntenCCA1.png used on input line 117.
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+
+<1stKMeansLowIntenCCA3D.png, id=42, 739.76375pt x 486.81876pt>
+File: 1stKMeansLowIntenCCA3D.png Graphic file (type png)
+
+<use 1stKMeansLowIntenCCA3D.png>
+Package pdftex.def Info: 1stKMeansLowIntenCCA3D.png used on input line 118.
+(pdftex.def)             Requested size: 85.34758pt x 85.35797pt.
+ [3 <./Image1.png (PNG copy)> <./Gradient1.png (PNG copy)> <./Watershed1.png (P
+NG copy)> <./E0Sigma21.png (PNG copy)> <./E1Sigma21.png (PNG copy)> <./E2Sigma2
+1.png (PNG copy)> <./1stKMeans1.png (PNG copy)> <./1stKMeansLowInten1.png (PNG 
+copy)> <./1stKMeansLowIntenCCA1.png (PNG copy)> <./1stKMeansLowIntenCCA3D.png (
+PNG copy)>]
+<2ndKMeans1.png, id=67, 717.68124pt x 486.81876pt>
+File: 2ndKMeans1.png Graphic file (type png)
+ <use 2ndKMeans1.png>
+Package pdftex.def Info: 2ndKMeans1.png used on input line 136.
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+
+<2ndKMeansBlob1.png, id=68, 717.68124pt x 486.81876pt>
+File: 2ndKMeansBlob1.png Graphic file (type png)
+
+<use 2ndKMeansBlob1.png>
+Package pdftex.def Info: 2ndKMeansBlob1.png used on input line 137.
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+ <2ndKMeansCCA1.png, id=69, 717.68124pt x 486.81876pt>
+File: 2ndKMeansCCA1.png Graphic file (type png)
+
+<use 2ndKMeansCCA1.png>
+Package pdftex.def Info: 2ndKMeansCCA1.png used on input line 138.
+(pdftex.def)             Requested size: 85.35146pt x 85.35797pt.
+ <2ndKMeansCCA3D.png, id=70, 739.76375pt x 486.81876pt>
+File: 2ndKMeansCCA3D.png Graphic file (type png)
+
+<use 2ndKMeansCCA3D.png>
+Package pdftex.def Info: 2ndKMeansCCA3D.png used on input line 139.
+(pdftex.def)             Requested size: 85.34758pt x 85.35797pt.
+ (./15OCTReport.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
- [3 <./Image1.png (PNG copy)> <./Gradient1.png (PNG copy)> <./Watershed1.png (P
-NG copy)> <./E0Sigma21.png (PNG copy)> <./E1Sigma21.png (PNG copy)> <./E2Sigma2
-1.png (PNG copy)>] [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+ [4 <./2ndKMeans1.png (PNG copy)> <./2ndKMeansBlob1.png (PNG copy)> <./2ndKMean
+sCCA1.png (PNG copy)> <./2ndKMeansCCA3D.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
  (./15OCTReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
 Package rerunfilecheck Info: File `15OCTReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
- 16310 strings out of 495028
- 292918 string characters out of 6181497
- 370277 words of memory out of 5000000
- 19201 multiletter control sequences out of 15000+600000
+ 16362 strings out of 495028
+ 293994 string characters out of 6181497
+ 371473 words of memory out of 5000000
+ 19235 multiletter control sequences out of 15000+600000
  13883 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,10n,55p,422b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -716,10 +776,10 @@ type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr8.pfb>
-Output written on 15OCTReport.pdf (4 pages, 531801 bytes).
+Output written on 15OCTReport.pdf (4 pages, 1004604 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 32 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

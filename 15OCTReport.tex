@@ -62,8 +62,8 @@ I do not know this would be always true for every CT image, but I tried to be ca
     \node (in1) [io] {Input};
     \node (pro1) [process, below of=in1] {Image Gradient Magnitude};
     \node (pro2) [process, below of=pro1] {Watershed Segmentation};
-    \node (pro3) [process, below of=pro2] {1st K-Means Clustering};
-    \node (pro4) [process, below of=pro3] {2nd K-Means Clustering};
+    \node (pro3) [process, below of=pro2] {K-Means Component Clustering};
+    \node (pro4) [process, below of=pro3] {K-Means Voxel Clustering};
     \node (out1) [io, below of=pro4] {Output};
 
     \draw [arrow] (in1) -- (pro1);
@@ -101,48 +101,48 @@ each component and put them into the clustering methods. As shown in Figure~\ref
 \begin{figure}[h!tb]
   \centering
   \captionsetup[subfigure]{labelformat=empty}
-  \subfloat[Input]{\includegraphics[width=40mm, height=40mm]{Image1.png}}  \hfill
-  \subfloat[$\lambda_1$]{\includegraphics[width=40mm, height=40mm]{E0Sigma21.png}}  \hfill
-  \subfloat[$\lambda_2$]{\includegraphics[width=40mm, height=40mm]{E1Sigma21.png}} \hfill
-  \subfloat[$\lambda_3$]{\includegraphics[width=40mm, height=40mm]{E2Sigma21.png}}  
+  \subfloat[Input]{\includegraphics[width=30mm, height=30mm]{Image1.png}}  \hfill
+  \subfloat[$\lambda_1$]{\includegraphics[width=30mm, height=30mm]{E0Sigma21.png}}  \hfill
+  \subfloat[$\lambda_2$]{\includegraphics[width=30mm, height=30mm]{E1Sigma21.png}} \hfill
+  \subfloat[$\lambda_3$]{\includegraphics[width=30mm, height=30mm]{E2Sigma21.png}}  
 \caption{Input features for 1st K-Means clustering. Intensity and eigenvalue maps of Hessian matrix for each voxel, $\lambda_1 < \lambda_2 < \lambda_3$}
 \label{figE}
 \end{figure}
 
-
-
-
-
-\begin{comment}
 \begin{figure}[h!tb]
   \centering
-\captionsetup[subfigure]{labelformat=empty}
-  \subfloat[Blobness $\sigma=2$]{\includegraphics[width=40mm, height=40mm]{BlobImage/Blobness2.png} } \hfill
-  \subfloat[Blobness $\sigma=5$]{\includegraphics[width=40mm, height=40mm]{BlobSigma5/BlobnessPlane2.png}} \hfil
-  \subfloat[Blobness $\sigma=10$]{\includegraphics[width=40mm, height=40mm]{BlobSigma10/Blobness.png}}  \\
-  \subfloat[$\sigma=2, S_{th} =10$]{\includegraphics[width=40mm, height=40mm]{CCA_Min10/CCAPlane2.png} } \hfill
-  \subfloat[$\sigma=2, S_{th} =100$]{\includegraphics[width=40mm, height=40mm]{CCA_Min100/CCAPlane2.png}} \hfil
-  \subfloat[$\sigma=10, S_{th} =10$]{\includegraphics[width=40mm, height=40mm]{BlobSigma10/plane2Label.png}}  \\
-\caption{Blobness $\mathcal{B}$ map generated with different $\sigma$ LoG filters}
-\label{figBlobness}
+  \captionsetup[subfigure]{}
+  \subfloat[Component Clustering]{\includegraphics[width=30mm, height=30mm]{1stKMeans1.png}}  \hfill
+  \subfloat[Lowest Intensity]{\includegraphics[width=30mm, height=30mm]{1stKMeansLowInten1.png}}  \hfill
+  \subfloat[CCA Result]{\includegraphics[width=30mm, height=30mm]{1stKMeansLowIntenCCA1.png}} \hfill
+  \subfloat[3D CCA]{\includegraphics[width=30mm, height=30mm]{1stKMeansLowIntenCCA3D.png}} 
+\caption{The result of first K-means clustering}
+\label{fig1stK}
 \end{figure}
 
-There can be two ways to detect differently sized blobs, $i)$ refining detected blob-like structures, or $ii)$ detecting structure-like regions and refining them by their shapes.
-The refinement of detected blobs starts from over-segmented results of blobs with small $\sigma$, 
-Since air-voids have low and almost uniform intensity compared to other objects in concrete, we may be able to apply clustering algorithms by intensity of blobs.
-Then we select blobs in a cluster with lowest mean intensity. This method is expected to work well if over-segmentation of blobs captures all blobs and the nubmer of 
-cluster classes is appropriate. 
+Figure~\ref{fig1stK}(a) shows the result of the first K-means clustering method. Since I assumed that blobs have the lowest intenstity region in the input image,
+the cluster with the lowest mean intensity is selected to be processed for the further step. As you can see at Figure~\ref{fig1stK}(c), a single K-means clustering 
+captured many false positives in vessel area. It is natural since the first clustering is done to the components which are extracted by watershed segmentation. 
+Since the watershed segmentation solely depends on the first derivative, the components do not represent a single object, but a mixture of objects(like blobs, fibers, concretes, and etc.).
+Furthremore, if you look at 3D view of the CCA results at Figure~\ref{fig1stK}(d), you can check that vessels at the lower part on z-axis
+are more likely to be captured since the intensity is not really uniform on z-axis(Maybe because of long exporsure time on a CT machine).
+Thus, I did the second clustering for all voxels of the minimum intensity cluster of the first K-means clustering method. 
+I set $K = 2$ for this time, since I only need to distinguish between blobs and vessel fractures in each component. I only used the intensity and the $\lambda_1$ since only those two are supposed to 
+be different for vessels and blobs.
 
-The detection of structure-like regions followed by shape refinment starts from extracting maximally stable extreme regions(MSER) suggested by Matas et al. \cite{Matas02}.
-Maximally stable extreme regions are defined solely by an extremal property of the intenstiy function in the region and on its outer boundary. It can be defined as regions 
-which are stable over a large range of thresholds, when we slide threshold from the minimum intensity to the maximum intensity.
-We extract extremal regions of image and conduct shape analysis to ROI for each candidate with different $\sigma$s or using the axis of geometric principal components.
-Unlilke the shape analysis for an entire image, this method can have different $\sigma$s for each blob. 
+\begin{figure}[h!tb]
+  \centering
+  \captionsetup[subfigure]{}
+  \subfloat[Voxel Clustering]{\includegraphics[width=30mm, height=30mm]{2ndKMeans1.png}}  \hfill
+  \subfloat[Blob Candidates]{\includegraphics[width=30mm, height=30mm]{2ndKMeansBlob1.png}}  \hfill
+  \subfloat[CCA Result]{\includegraphics[width=30mm, height=30mm]{2ndKMeansCCA1.png}} \hfill
+  \subfloat[3D CCA]{\includegraphics[width=30mm, height=30mm]{2ndKMeansCCA3D.png}} 
+\caption{The result of first K-means clustering}
+\label{fig2ndK}
+\end{figure}
 
-Above two methods are based on the fact that air-voids are dark and have almost uniform intensity.
-The methods may be hard to be generalized to other similar problems, such as, eliminating lesions for vein segmentation in a human liver, but this is just a far-away-future problem. 
-I am currently working on the second method (MSER Shape Analysis) because I am not sure that the over-segmentation can guarantee capturing all air voids in the CT image. 
-\end{comment}
+As a result, I could extract blobs for ``StiffFiber\_cropped'' image. The limitations of this method will be discussed in the next section.
+
 
 \bibliographystyle{unsrt}
 \bibliography{FRCBib.bib}
